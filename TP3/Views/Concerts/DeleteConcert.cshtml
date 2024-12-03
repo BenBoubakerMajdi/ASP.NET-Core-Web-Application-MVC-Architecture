@@ -1,0 +1,20 @@
+﻿@model TP3.Models.ConcertModel
+@{
+    ViewData["Title"] = "Delete Concert";
+}
+
+<div class="alert alert-danger">
+    Are you sure you want to delete this concert?
+</div>
+
+<div>
+    <h4>@Model.Concert_Name</h4>
+    <p>@Model.Concert_Description</p>
+    <p>Price: @Model.TicketPrice.ToString("C")</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Concert_Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

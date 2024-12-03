@@ -1,0 +1,34 @@
+﻿@model IEnumerable<TP3.Models.ConcertModel>
+@{
+    ViewData["Title"] = "Concerts List";
+}
+
+<a asp-action="Create" class="btn btn-primary mb-3">Create New Concert</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Concert Name</th>
+            <th>Description</th>
+            <th>Ticket Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var concert in Model)
+        {
+            <tr>
+                <td>@concert.Concert_Id</td>
+                <td>@concert.Concert_Name</td>
+                <td>@concert.Concert_Description</td>
+                <td>@concert.TicketPrice.ToString("C")</td>
+                <td>
+                    <a asp-action="ConcertDetails" asp-route-id="@concert.Concert_Id" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="EditConcert" asp-route-id="@concert.Concert_Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="DeleteConcert" asp-route-id="@concert.Concert_Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

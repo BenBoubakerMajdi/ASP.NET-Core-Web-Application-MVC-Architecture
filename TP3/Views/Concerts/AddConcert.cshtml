@@ -1,0 +1,31 @@
+﻿@model TP3.Models.ConcertModel
+@{
+    ViewData["Title"] = "Create New Concert";
+}
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="Concert_Name">Concert Name</label>
+        <input asp-for="Concert_Name" class="form-control" />
+        <span asp-validation-for="Concert_Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="TicketPrice">Ticket Price</label>
+        <input asp-for="TicketPrice" class="form-control" />
+        <span asp-validation-for="TicketPrice" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Artist">Artist</label>
+        <input type="text" name="artist" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="Location">Location</label>
+        <input type="text" name="location" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
+    <a asp-action="Index" class="btn btn-secondary mt-2">Cancel</a>
+</form>

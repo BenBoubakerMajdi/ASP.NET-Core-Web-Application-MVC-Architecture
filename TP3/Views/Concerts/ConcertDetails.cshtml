@@ -1,0 +1,13 @@
+﻿@model TP3.Models.ConcertModel
+@{
+    ViewData["Title"] = "Concert Details";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Concert Name: @Model.Concert_Name</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Description: @Model.Concert_Description</h6>
+        <p class="card-text">Ticket Price: @Model.TicketPrice.ToString("C")</p>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
